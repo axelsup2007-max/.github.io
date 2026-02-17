@@ -3,60 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veille Technologique - EDR</title>
+    <title>Veille Technologique - Mon Portfolio</title>
     <style>
+        /* Style de la barre de navigation noire */
+        nav {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #3498db;
+        }
+
+        /* Style général */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding-top: 80px; /* Espace pour ne pas cacher le contenu sous la barre noire */
+        }
+
+        .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #f4f7f6;
-        }
-        .container {
             background: #fff;
             padding: 40px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
+
         h1 {
             color: #2c3e50;
             border-bottom: 2px solid #3498db;
             padding-bottom: 10px;
         }
+
         h2 {
             color: #2980b9;
             margin-top: 30px;
-            display: flex;
-            align-items: center;
         }
-        h2::before {
-            content: "▹";
-            margin-right: 10px;
-            color: #3498db;
-        }
-        p {
-            margin-bottom: 15px;
-            text-align: justify;
-        }
+
         .highlight {
             background-color: #e8f4fd;
             padding: 15px;
             border-left: 5px solid #3498db;
             font-style: italic;
+            margin: 20px 0;
         }
+
         .tech-list {
             list-style: none;
             padding: 0;
         }
+
         .tech-list li {
             background: #f9f9f9;
-            margin: 5px 0;
-            padding: 10px;
+            margin: 10px 0;
+            padding: 15px;
             border-radius: 4px;
             border-left: 3px solid #2ecc71;
         }
+
         strong {
             color: #2c3e50;
         }
@@ -64,44 +86,48 @@
 </head>
 <body>
 
-<div class="container">
-    <h1>Veille Technologique : L'EDR (Endpoint Detection and Response)</h1>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="projets.html">Projets</a>
+        <a href="veille.html">Veille Technologique</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 
-    <section>
-        <h2>Pourquoi ce sujet ?</h2>
-        <p>
-            J'ai choisi ce sujet de veille technologique car mon objectif professionnel est de poursuivre mon parcours dans la <strong>cybersécurité</strong>. 
-            Il est essentiel pour moi de rester informé sur ces thématiques qui évoluent très rapidement. 
-            L'<strong>EDR</strong> est une composante majeure de la sécurité moderne et représente l'avenir de la protection des infrastructures face à des menaces de plus en plus sophistiquées.
-        </p>
-    </section>
+    <div class="container">
+        <h1>Veille Technologique : L'EDR (Endpoint Detection and Response)</h1>
 
-    <section>
-        <h2>Ce que m'apporte cette veille</h2>
-        <p>
-            Cette veille va m'apporter une réelle expertise ainsi qu'une connaissance actualisée de l'EDR. 
-            Cette technologie constitue une étape clé dans l'évolution de la cybersécurité et s'inscrit pleinement dans les futures stratégies de défense numérique. 
-        </p>
-        <div class="highlight">
-            "Elle me permettra ainsi d'acquérir des connaissances approfondies qui constitueront un véritable atout pour ma future orientation professionnelle."
-        </div>
-    </section>
+        <section>
+            <h2>Pourquoi ce sujet ?</h2>
+            <p>
+                J'ai choisi ce sujet de veille technologique car mon objectif professionnel est de poursuivre mon parcours dans la <strong>cybersécurité</strong>. 
+                Il est essentiel pour moi de rester informé sur ces thématiques qui évoluent très rapidement. 
+                L'<strong>EDR</strong> est une composante majeure de la sécurité moderne et représente l'avenir de la protection des infrastructures face à des menaces de plus en plus sophistiquées.
+            </p>
+        </section>
 
-    <section>
-        <h2>Automatisation de la veille</h2>
-        <p>
-            Pour garantir la pertinence et la régularité de mes informations, j'ai mis en place un système automatisé :
-        </p>
-        <ul class="tech-list">
-            <li><strong>Outil d'orchestration :</strong> Utilisation de <strong>Make.com</strong> pour concevoir un flux d'automatisation (Workflow).</li>
-            <li><strong>Collecte :</strong> Sauvegarde automatique d'articles dédiés à l'EDR via flux RSS.</li>
-            <li><strong>Analyse IA :</strong> Synthèse des contenus par une API d'intelligence artificielle (<strong>OpenAI</strong>, <strong>Gemini</strong> ou <strong>Mistral AI</strong>).</li>
-        </ul>
-        <p>
-            Grâce à cette approche, je peux traiter un volume important d'informations techniques tout en me concentrant sur l'analyse des points clés.
-        </p>
-    </section>
-</div>
+        <section>
+            <h2>Bénéfices de cette veille</h2>
+            <p>
+                Cette veille va m'apporter une réelle expertise ainsi qu'une connaissance actualisée de l'EDR. 
+                Cette technologie constitue une étape clé dans l'évolution de la cybersécurité et s'inscrit pleinement dans les futures stratégies de défense numérique. 
+            </p>
+            <div class="highlight">
+                "Elle me permettra ainsi d'acquérir des connaissances approfondies qui constitueront un véritable atout pour ma future orientation professionnelle."
+            </div>
+        </section>
+
+        <section>
+            <h2>Automatisation de la veille</h2>
+            <p>
+                Pour garantir la pertinence de mes recherches, j'ai mis en place un système automatisé :
+            </p>
+            <ul class="tech-list">
+                <li><strong>Outil d'orchestration :</strong> Utilisation de <strong>Make.com</strong> pour concevoir un flux d'automatisation (Workflow).</li>
+                <li><strong>Collecte :</strong> Sauvegarde automatique d'articles dédiés à l'EDR via flux RSS.</li>
+                <li><strong>Analyse IA :</strong> Synthèse des contenus par une API d'intelligence artificielle (<strong>OpenAI</strong>, <strong>Gemini</strong> ou <strong>Mistral AI</strong>).</li>
+            </ul>
+        </section>
+    </div>
 
 </body>
 </html>
