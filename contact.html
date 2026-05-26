@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — Portfolio Axel SISR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-brand"><a href="../index.html" style="text-decoration:none;color:inherit;">AXEL <span class="dot">·</span> SISR</a></div>
+    <nav class="nav-links">
+      <a href="../index.html">Accueil</a>
+      <a href="e5.html">E5</a>
+      <a href="e6.html">E6</a>
+      <a href="veille.html">Veille</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <button class="burger" id="burger">&#9776;</button>
+  </header>
+
+  <div class="page-hero">
+    <div class="container">
+      <div class="section-label">Contact</div>
+      <h1>Prenons<br>contact</h1>
+      <p>N'hésitez pas à me contacter pour toute question concernant mon parcours ou mes projets.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
+
+        <div class="reveal">
+          <div class="section-label">Formulaire</div>
+          <form class="contact-form" action="https://formspree.io/f/VOTRE_ID" method="POST">
+            <div class="form-group">
+              <label for="name">Nom complet</label>
+              <input type="text" id="name" name="name" placeholder="Jean Dupont" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Adresse e-mail</label>
+              <input type="email" id="email" name="email" placeholder="jean@exemple.fr" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Votre message..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Envoyer le message</button>
+          </form>
+        </div>
+
+        <div class="reveal">
+          <div class="section-label">Informations</div>
+          <div class="info-card" style="margin-bottom:1.5rem;">
+            <div class="info-item">
+              <span class="info-label">Email</span>
+              <span>votre@email.fr</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">LinkedIn</span>
+              <span>linkedin.com/in/votre-profil</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">GitHub</span>
+              <span>github.com/votre-profil</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Localisation</span>
+              <span>Île-de-France</span>
+            </div>
+          </div>
+          <p style="font-size:0.8rem;">Vous pouvez également télécharger mon CV ou consulter mon profil LinkedIn pour plus d'informations sur mon parcours.</p>
+          <div style="margin-top:1.5rem;">
+            <a href="#" class="btn-ghost" style="display:inline-block">Télécharger mon CV</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© 2026 — Axel · Portfolio BTS SIO SISR</span>
+      <span>Fait avec passion</span>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
