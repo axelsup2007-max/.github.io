@@ -7,6 +7,108 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .doc-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+    .doc-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .doc-header-left { display: flex; align-items: center; gap: 1.2rem; }
+    .doc-icon {
+      font-size: 1.8rem;
+      background: rgba(167,139,250,0.1);
+      border: 1px solid rgba(167,139,250,0.2);
+      width: 48px; height: 48px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .doc-title { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.2rem; }
+    .doc-meta { font-family: var(--font-mono); font-size: 0.65rem; color: var(--muted); letter-spacing: 0.1em; }
+    .doc-actions { display: flex; gap: 0.75rem; align-items: center; }
+    .btn-view {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.5rem 1rem;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+    .btn-view:hover { border-color: var(--accent2); color: var(--accent2); }
+    .btn-dl {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.5rem 1rem;
+      background: var(--accent2);
+      border: 1px solid var(--accent2);
+      color: white;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+    .btn-dl:hover { background: #c4b5fd; }
+
+    .methode-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent2);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .methode-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+    .methode-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .methode-step:last-child { border-bottom: none; }
+    .step-num {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent2);
+      background: rgba(167,139,250,0.1);
+      border: 1px solid rgba(167,139,250,0.2);
+      width: 28px; height: 28px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .step-text { font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
+    .step-text strong { color: var(--text); }
+
+    .sujet-banner {
+      background: linear-gradient(135deg, rgba(167,139,250,0.08), rgba(79,142,247,0.05));
+      border: 1px solid rgba(167,139,250,0.2);
+      padding: 2.5rem;
+      margin-bottom: 3rem;
+    }
+    .sujet-banner .section-label { margin-bottom: 0.75rem; }
+    .sujet-banner h2 { margin-bottom: 1rem; font-size: clamp(1.4rem, 3vw, 2rem); }
+    .sujet-banner p { max-width: 700px; margin-bottom: 0; }
+  </style>
 </head>
 <body>
 
@@ -25,81 +127,132 @@
   <div class="page-hero">
     <div class="container">
       <div class="section-label">Veille technologique</div>
-      <h1>Actualités<br>& tendances</h1>
-      <p>Suivi régulier des évolutions dans les domaines des réseaux, des systèmes et de la cybersécurité.</p>
+      <h1>Détection humaine<br><span class="outline">en cybersécurité</span></h1>
+      <p>Suivi des évolutions sur la détection des comportements suspects et des mouvements inhabituels dans les systèmes d'information.</p>
     </div>
   </div>
 
   <section class="section">
     <div class="container">
-      <div class="section-label">Articles & ressources</div>
+
+      <!-- Sujet de veille -->
+      <div class="sujet-banner reveal">
+        <div class="section-label light">Sujet de veille</div>
+        <h2>La détection humaine dans la cybersécurité : repérer les mouvements inhabituels</h2>
+        <p>Ma veille porte sur les techniques et outils permettant de détecter des comportements humains anormaux au sein d'un système d'information — qu'il s'agisse d'un attaquant externe ayant compromis un compte, ou d'une menace interne. L'objectif est de comprendre comment les solutions modernes (SIEM, UEBA, IA) analysent les patterns comportementaux pour identifier ce qui sort de l'ordinaire.</p>
+      </div>
+
+      <!-- Méthode de veille -->
+      <div class="section-label">Méthode de veille</div>
+      <div class="methode-card reveal">
+        <h3>Alertes Google + Adresse mail dédiée</h3>
+        <div class="methode-step">
+          <div class="step-num">1</div>
+          <div class="step-text"><strong>Création d'une adresse mail dédiée</strong> — Une boîte mail spécifique a été créée exclusivement pour recevoir les alertes de veille, afin de séparer les notifications de ma messagerie personnelle et de faciliter l'organisation.</div>
+        </div>
+        <div class="methode-step">
+          <div class="step-num">2</div>
+          <div class="step-text"><strong>Configuration des alertes Google</strong> — Via <em>google.fr/alerts</em>, plusieurs alertes ont été configurées sur des mots-clés ciblés : <em>« détection comportementale cybersécurité »</em>, <em>« UEBA insider threat »</em>, <em>« anomaly detection SIEM »</em>, <em>« comportement inhabituel réseau »</em>.</div>
+        </div>
+        <div class="methode-step">
+          <div class="step-num">3</div>
+          <div class="step-text"><strong>Fréquence et sources</strong> — Les alertes sont configurées pour une livraison quotidienne ou en temps réel selon l'actualité, en ciblant des sources de qualité : blogs sécurité, ANSSI, CERT-FR, publications académiques et éditeurs de solutions.</div>
+        </div>
+        <div class="methode-step">
+          <div class="step-num">4</div>
+          <div class="step-text"><strong>Tri et sélection</strong> — Les articles reçus sont triés régulièrement. Seuls ceux apportant une réelle valeur ajoutée (nouveautés techniques, cas concrets, évolutions réglementaires) sont retenus et synthétisés ci-dessous.</div>
+        </div>
+      </div>
+
+      <!-- Articles -->
+      <div class="section-label" style="margin-top:3rem;">Articles & ressources sélectionnés</div>
       <div class="veille-grid">
 
         <div class="veille-card reveal">
-          <div class="veille-date">Mai 2026</div>
-          <h3>Titre de l'article ou de la ressource 1</h3>
-          <p>Résumé de l'article, ce que vous avez appris et en quoi cela est pertinent pour votre métier.</p>
+          <div class="veille-date">2025 – 2026</div>
+          <h3>UEBA : l'analyse comportementale au service de la détection des menaces internes</h3>
+          <p>Les solutions UEBA (User and Entity Behavior Analytics) établissent une baseline du comportement normal de chaque utilisateur et déclenchent une alerte dès qu'une déviation significative est détectée : connexion à une heure inhabituelle, accès à des ressources inhabituelles, volume de données exfiltré anormal.</p>
           <div class="tags-row">
-            <span class="tag">Cybersécurité</span>
+            <span class="tag">UEBA</span>
+            <span class="tag">Insider Threat</span>
           </div>
         </div>
 
         <div class="veille-card reveal">
-          <div class="veille-date">Avril 2026</div>
-          <h3>Titre de l'article ou de la ressource 2</h3>
-          <p>Résumé de l'article, ce que vous avez appris et en quoi cela est pertinent pour votre métier.</p>
+          <div class="veille-date">2025 – 2026</div>
+          <h3>SIEM et corrélation d'événements : détecter les latéralisation réseau</h3>
+          <p>Les moteurs de corrélation des SIEM modernes (comme Wazuh ou Splunk) permettent de relier plusieurs événements apparemment anodins pour reconstituer un schéma d'attaque : un échec d'authentification suivi d'une réussite depuis un pays différent est un signal fort de compromission de compte.</p>
           <div class="tags-row">
-            <span class="tag">Réseaux</span>
-            <span class="tag">Wi-Fi 7</span>
+            <span class="tag">SIEM</span>
+            <span class="tag">Corrélation</span>
+            <span class="tag">Wazuh</span>
           </div>
         </div>
 
         <div class="veille-card reveal">
-          <div class="veille-date">Mars 2026</div>
-          <h3>Titre de l'article ou de la ressource 3</h3>
-          <p>Résumé de l'article, ce que vous avez appris et en quoi cela est pertinent pour votre métier.</p>
-          <div class="tags-row">
-            <span class="tag">Linux</span>
-            <span class="tag">Kernel</span>
-          </div>
-        </div>
-
-        <div class="veille-card reveal">
-          <div class="veille-date">Février 2026</div>
-          <h3>Titre de l'article ou de la ressource 4</h3>
-          <p>Résumé de l'article, ce que vous avez appris et en quoi cela est pertinent pour votre métier.</p>
+          <div class="veille-date">2025 – 2026</div>
+          <h3>Zero Trust et principe du moindre privilège face aux mouvements latéraux</h3>
+          <p>L'architecture Zero Trust part du principe qu'aucun utilisateur ou équipement n'est de confiance par défaut, même à l'intérieur du réseau. Combinée à une détection comportementale, elle limite considérablement la capacité d'un attaquant à se déplacer latéralement après avoir compromis un premier compte.</p>
           <div class="tags-row">
             <span class="tag">Zero Trust</span>
+            <span class="tag">Mouvements latéraux</span>
           </div>
         </div>
 
         <div class="veille-card reveal">
-          <div class="veille-date">Janvier 2026</div>
-          <h3>Titre de l'article ou de la ressource 5</h3>
-          <p>Résumé de l'article, ce que vous avez appris et en quoi cela est pertinent pour votre métier.</p>
+          <div class="veille-date">2025 – 2026</div>
+          <h3>L'IA appliquée à la détection d'anomalies comportementales</h3>
+          <p>Les modèles d'apprentissage automatique permettent aujourd'hui de modéliser le comportement « normal » d'un utilisateur avec une précision bien supérieure aux règles statiques. Ils s'adaptent en continu et réduisent les faux positifs qui épuisent les équipes SOC.</p>
           <div class="tags-row">
-            <span class="tag">Cloud</span>
-            <span class="tag">Azure</span>
-          </div>
-        </div>
-
-        <div class="veille-card reveal">
-          <div class="veille-date">Décembre 2025</div>
-          <h3>Titre de l'article ou de la ressource 6</h3>
-          <p>Résumé de l'article, ce que vous avez appris et en quoi cela est pertinent pour votre métier.</p>
-          <div class="tags-row">
-            <span class="tag">ANSSI</span>
-            <span class="tag">Recommandations</span>
+            <span class="tag">Intelligence Artificielle</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">SOC</span>
           </div>
         </div>
 
       </div>
+
+      <!-- Documents -->
+      <div class="section-label" style="margin-top:4rem;">Documents à consulter</div>
+
+      <div class="doc-card reveal">
+        <div class="doc-header">
+          <div class="doc-header-left">
+            <div class="doc-icon">📰</div>
+            <div>
+              <div class="doc-title">Dossier de veille — Détection humaine en cybersécurité</div>
+              <div class="doc-meta">PDF · veille-1.pdf</div>
+            </div>
+          </div>
+          <div class="doc-actions">
+            <a class="btn-view" href="../documents/veille-1.pdf" target="_blank">👁 Aperçu</a>
+            <a class="btn-dl" href="../documents/veille-1.pdf" download>⬇ Télécharger</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="doc-card reveal">
+        <div class="doc-header">
+          <div class="doc-header-left">
+            <div class="doc-icon">📰</div>
+            <div>
+              <div class="doc-title">Synthèse des alertes Google — Sélection d'articles</div>
+              <div class="doc-meta">PDF · veille-2.pdf</div>
+            </div>
+          </div>
+          <div class="doc-actions">
+            <a class="btn-view" href="../documents/veille-2.pdf" target="_blank">👁 Aperçu</a>
+            <a class="btn-dl" href="../documents/veille-2.pdf" download>⬇ Télécharger</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <footer class="footer">
     <div class="footer-inner">
-      <span>© 2026 — Axel · Portfolio BTS SIO SISR</span>
+      <span>© 2025–2027 — Axel · Portfolio BTS SIO SISR</span>
       <span>Fait avec passion</span>
     </div>
   </footer>
