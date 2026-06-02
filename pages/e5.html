@@ -8,7 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
   <style>
-    .doc-section { margin-top: 3rem; }
     .doc-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -45,11 +44,11 @@
       background: transparent;
       border: 1px solid var(--border);
       color: var(--text);
-      cursor: pointer;
+      text-decoration: none;
       transition: all 0.2s;
+      display: inline-block;
     }
     .btn-view:hover { border-color: var(--accent); color: var(--accent); }
-    .btn-view.active { background: rgba(79,142,247,0.1); border-color: var(--accent); color: var(--accent); }
     .btn-dl {
       font-family: var(--font-mono);
       font-size: 0.7rem;
@@ -61,6 +60,7 @@
       color: white;
       text-decoration: none;
       transition: all 0.2s;
+      display: inline-block;
     }
     .btn-dl:hover { background: #6ba3ff; }
   </style>
@@ -83,7 +83,7 @@
     <div class="container">
       <div class="section-label">Épreuve E5</div>
       <h1>Bloc de<br>compétences 1</h1>
-      <p>Support et mise à disposition de services informatiques — Situations professionnelles réalisées en entreprise.</p>
+      <p>Support et mise à disposition de services informatiques — Situations professionnelles réalisées en entreprise chez L4-Logistics.</p>
     </div>
   </div>
 
@@ -93,125 +93,136 @@
       <!-- Situations professionnelles -->
       <div class="section-label">Situations professionnelles</div>
       <div class="situation-grid">
+
         <div class="situation-card reveal">
           <div class="sit-tag">SP1</div>
-          <h3>Intitulé de la situation professionnelle 1</h3>
-          <p>Décrivez ici la mission réalisée, le contexte, les outils utilisés et les compétences mobilisées.</p>
+          <h3>Sauvegarde automatisée des configurations des équipements réseaux</h3>
+          <p>Mise en place de la solution rConfig V6 Core pour remplacer CatTools, permettant la sauvegarde automatisée des configurations de switchs, routeurs et firewalls via SSH sur le parc réseau de L4-Logistics.</p>
           <div class="tags-row">
-            <span class="tag">Linux</span>
+            <span class="tag">rConfig</span>
+            <span class="tag">SSH</span>
             <span class="tag">Réseau</span>
-            <span class="tag">Administration</span>
+            <span class="tag">Automatisation</span>
           </div>
         </div>
+
         <div class="situation-card reveal">
           <div class="sit-tag">SP2</div>
-          <h3>Intitulé de la situation professionnelle 2</h3>
-          <p>Décrivez ici la mission réalisée, le contexte, les outils utilisés et les compétences mobilisées.</p>
+          <h3>Mise en place d'un poste de production</h3>
+          <p>Déploiement complet d'un poste Dell All-in-One en environnement de production : câblage, réservation DHCP par adresse MAC, masterisation via MDT, jonction au domaine Active Directory et placement dans l'UO Production.</p>
           <div class="tags-row">
             <span class="tag">Windows Server</span>
             <span class="tag">Active Directory</span>
+            <span class="tag">DHCP</span>
+            <span class="tag">MDT</span>
           </div>
         </div>
+
         <div class="situation-card reveal">
           <div class="sit-tag">SP3</div>
-          <h3>Intitulé de la situation professionnelle 3</h3>
-          <p>Décrivez ici la mission réalisée, le contexte, les outils utilisés et les compétences mobilisées.</p>
+          <h3>Déploiement d'une architecture client-serveur : Active Directory, DHCP, GPO et pfSense</h3>
+          <p>Déploiement d'une infrastructure virtualisée sous VMware avec un contrôleur de domaine Windows Server (AD DS, DNS, DHCP), un pare-feu pfSense centralisant les flux entre les réseaux Production, Administration et Serveur, et des GPO ciblées par profil utilisateur.</p>
           <div class="tags-row">
-            <span class="tag">Virtualisation</span>
+            <span class="tag">pfSense</span>
+            <span class="tag">Active Directory</span>
+            <span class="tag">GPO</span>
             <span class="tag">VMware</span>
-            <span class="tag">Proxmox</span>
+            <span class="tag">DHCP Relay</span>
           </div>
         </div>
+
         <div class="situation-card reveal">
           <div class="sit-tag">SP4</div>
-          <h3>Intitulé de la situation professionnelle 4</h3>
-          <p>Décrivez ici la mission réalisée, le contexte, les outils utilisés et les compétences mobilisées.</p>
+          <h3>Centralisation des logs et sécurité — SIEM Wazuh</h3>
+          <p>Déploiement d'une solution SIEM (Wazuh) sur Ubuntu Server pour centraliser les journaux d'événements du pare-feu pfSense (Syslog) et du contrôleur de domaine Windows Server (agent Wazuh), avec détection des comportements suspects en temps réel.</p>
           <div class="tags-row">
-            <span class="tag">Sauvegarde</span>
-            <span class="tag">Supervision</span>
+            <span class="tag">Wazuh</span>
+            <span class="tag">SIEM</span>
+            <span class="tag">Syslog</span>
+            <span class="tag">Linux</span>
+            <span class="tag">Cybersécurité</span>
           </div>
         </div>
+
       </div>
 
       <!-- Documents -->
-      <div class="doc-section">
-        <div class="section-label" style="margin-top:3rem;">Documents à consulter</div>
+      <div class="section-label" style="margin-top:4rem;">Documents à consulter</div>
 
-        <!-- Mission 1 -->
-        <div class="doc-card reveal">
-          <div class="doc-header">
-            <div class="doc-header-left">
-              <div class="doc-icon">📄</div>
-              <div>
-                <div class="doc-title">Mission 1</div>
-                <div class="doc-meta">PDF · e5-mission-1.pdf</div>
-              </div>
-            </div>
-            <div class="doc-actions">
-              <a class="btn-view" href="../documents/e5-mission-1.pdf" target="_blank">👁 Aperçu</a>
-              <a class="btn-dl" href="../documents/e5-mission-1.pdf" download>⬇ Télécharger</a>
+      <!-- Mission 1 -->
+      <div class="doc-card reveal">
+        <div class="doc-header">
+          <div class="doc-header-left">
+            <div class="doc-icon">📄</div>
+            <div>
+              <div class="doc-title">SP1 — Sauvegarde automatisée des configurations réseau</div>
+              <div class="doc-meta">PDF · E5-mission-1.pdf</div>
             </div>
           </div>
-        </div>
-
-        <!-- Mission 2 -->
-        <div class="doc-card reveal">
-          <div class="doc-header">
-            <div class="doc-header-left">
-              <div class="doc-icon">📄</div>
-              <div>
-                <div class="doc-title">Mission 2</div>
-                <div class="doc-meta">PDF · e5-mission-2.pdf</div>
-              </div>
-            </div>
-            <div class="doc-actions">
-              <a class="btn-view" href="../documents/e5-mission-2.pdf" target="_blank">👁 Aperçu</a>
-              <a class="btn-dl" href="../documents/e5-mission-2.pdf" download>⬇ Télécharger</a>
-            </div>
+          <div class="doc-actions">
+            <a class="btn-view" href="../documents/E5-mission-1.pdf" target="_blank">👁 Aperçu</a>
+            <a class="btn-dl" href="../documents/E5-mission-1.pdf" download>⬇ Télécharger</a>
           </div>
         </div>
-
-        <!-- Mission 3 -->
-        <div class="doc-card reveal">
-          <div class="doc-header">
-            <div class="doc-header-left">
-              <div class="doc-icon">📄</div>
-              <div>
-                <div class="doc-title">Mission 3</div>
-                <div class="doc-meta">PDF · e5-mission-3.pdf</div>
-              </div>
-            </div>
-            <div class="doc-actions">
-              <a class="btn-view" href="../documents/e5-mission-3.pdf" target="_blank">👁 Aperçu</a>
-              <a class="btn-dl" href="../documents/e5-mission-3.pdf" download>⬇ Télécharger</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mission 4 -->
-        <div class="doc-card reveal">
-          <div class="doc-header">
-            <div class="doc-header-left">
-              <div class="doc-icon">📄</div>
-              <div>
-                <div class="doc-title">Mission 4</div>
-                <div class="doc-meta">PDF · e5-mission-4.pdf</div>
-              </div>
-            </div>
-            <div class="doc-actions">
-              <a class="btn-view" href="../documents/e5-mission-4.pdf" target="_blank">👁 Aperçu</a>
-              <a class="btn-dl" href="../documents/e5-mission-4.pdf" download>⬇ Télécharger</a>
-            </div>
-          </div>
-        </div>
-
       </div>
+
+      <!-- Mission 2 -->
+      <div class="doc-card reveal">
+        <div class="doc-header">
+          <div class="doc-header-left">
+            <div class="doc-icon">📄</div>
+            <div>
+              <div class="doc-title">SP2 — Mise en place d'un poste de production</div>
+              <div class="doc-meta">PDF · E5-mission-2.pdf</div>
+            </div>
+          </div>
+          <div class="doc-actions">
+            <a class="btn-view" href="../documents/E5-mission-2.pdf" target="_blank">👁 Aperçu</a>
+            <a class="btn-dl" href="../documents/E5-mission-2.pdf" download>⬇ Télécharger</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mission 3 -->
+      <div class="doc-card reveal">
+        <div class="doc-header">
+          <div class="doc-header-left">
+            <div class="doc-icon">📄</div>
+            <div>
+              <div class="doc-title">SP3 — Architecture client-serveur : AD, DHCP, GPO & pfSense</div>
+              <div class="doc-meta">PDF · E5-mission-3.pdf</div>
+            </div>
+          </div>
+          <div class="doc-actions">
+            <a class="btn-view" href="../documents/E5-mission-3.pdf" target="_blank">👁 Aperçu</a>
+            <a class="btn-dl" href="../documents/E5-mission-3.pdf" download>⬇ Télécharger</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mission 4 -->
+      <div class="doc-card reveal">
+        <div class="doc-header">
+          <div class="doc-header-left">
+            <div class="doc-icon">📄</div>
+            <div>
+              <div class="doc-title">SP4 — Centralisation des logs et sécurité (SIEM Wazuh)</div>
+              <div class="doc-meta">PDF · E5-mission-4.pdf</div>
+            </div>
+          </div>
+          <div class="doc-actions">
+            <a class="btn-view" href="../documents/E5-mission-4.pdf" target="_blank">👁 Aperçu</a>
+            <a class="btn-dl" href="../documents/E5-mission-4.pdf" download>⬇ Télécharger</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <footer class="footer">
     <div class="footer-inner">
-      <span>© 2026 — Axel · Portfolio BTS SIO SISR</span>
+      <span>© 2025–2027 — Axel · Portfolio BTS SIO SISR</span>
       <span>Fait avec passion</span>
     </div>
   </footer>
