@@ -8,7 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
   <style>
-    .doc-section { margin-top: 3rem; }
     .doc-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -45,11 +44,11 @@
       background: transparent;
       border: 1px solid var(--border);
       color: var(--text);
-      cursor: pointer;
+      text-decoration: none;
       transition: all 0.2s;
+      display: inline-block;
     }
     .btn-view:hover { border-color: var(--accent2); color: var(--accent2); }
-    .btn-view.active { background: rgba(167,139,250,0.1); border-color: var(--accent2); color: var(--accent2); }
     .btn-dl {
       font-family: var(--font-mono);
       font-size: 0.7rem;
@@ -61,6 +60,7 @@
       color: white;
       text-decoration: none;
       transition: all 0.2s;
+      display: inline-block;
     }
     .btn-dl:hover { background: #c4b5fd; }
   </style>
@@ -90,7 +90,6 @@
   <section class="section">
     <div class="container">
 
-      <!-- Projets -->
       <div class="section-label">Projets & missions</div>
       <div class="situation-grid">
         <div class="situation-card reveal">
@@ -102,71 +101,33 @@
             <span class="tag" style="background:rgba(167,139,250,0.1);color:var(--accent2);border-color:rgba(167,139,250,0.2)">VPN</span>
           </div>
         </div>
-        <div class="situation-card reveal">
-          <div class="sit-tag" style="color:var(--accent2)">Projet 2</div>
-          <h3>Intitulé du projet ou de la mission 2</h3>
-          <p>Décrivez ici le projet cybersécurité, le contexte, les outils et les compétences mobilisées.</p>
-          <div class="tags-row">
-            <span class="tag" style="background:rgba(167,139,250,0.1);color:var(--accent2);border-color:rgba(167,139,250,0.2)">Audit</span>
-            <span class="tag" style="background:rgba(167,139,250,0.1);color:var(--accent2);border-color:rgba(167,139,250,0.2)">Hardening</span>
-          </div>
-        </div>
-        <div class="situation-card reveal">
-          <div class="sit-tag" style="color:var(--accent2)">Projet 3</div>
-          <h3>Intitulé du projet ou de la mission 3</h3>
-          <p>Décrivez ici le projet cybersécurité, le contexte, les outils et les compétences mobilisées.</p>
-          <div class="tags-row">
-            <span class="tag" style="background:rgba(167,139,250,0.1);color:var(--accent2);border-color:rgba(167,139,250,0.2)">SIEM</span>
-            <span class="tag" style="background:rgba(167,139,250,0.1);color:var(--accent2);border-color:rgba(167,139,250,0.2)">Monitoring</span>
-          </div>
-        </div>
       </div>
 
       <!-- Documents -->
-      <div class="doc-section">
-        <div class="section-label" style="margin-top:3rem;">Documents à consulter</div>
+      <div class="section-label" style="margin-top:4rem;">Documents à consulter</div>
 
-        <!-- Document 1 -->
-        <div class="doc-card reveal">
-          <div class="doc-header">
-            <div class="doc-header-left">
-              <div class="doc-icon">📄</div>
-              <div>
-                <div class="doc-title">Nom du document 1 — Projet 1</div>
-                <div class="doc-meta">PDF · Projet cybersécurité 1</div>
-              </div>
-            </div>
-            <div class="doc-actions">
-              <a class="btn-view" href="../documents/e6-document1.pdf" target="_blank">👁 Aperçu</a>
-              <a class="btn-dl" href="../documents/e6-document1.pdf" download>⬇ Télécharger</a>
+      <div class="doc-card reveal">
+        <div class="doc-header">
+          <div class="doc-header-left">
+            <div class="doc-icon">📄</div>
+            <div>
+              <div class="doc-title">Mission 1 E6</div>
+              <div class="doc-meta">PDF · Mission 1 E6.pdf</div>
             </div>
           </div>
-        </div>
-
-        <!-- Document 2 -->
-        <div class="doc-card reveal">
-          <div class="doc-header">
-            <div class="doc-header-left">
-              <div class="doc-icon">📄</div>
-              <div>
-                <div class="doc-title">Nom du document 2 — Projet 2</div>
-                <div class="doc-meta">PDF · Projet cybersécurité 2</div>
-              </div>
-            </div>
-            <div class="doc-actions">
-              <a class="btn-view" href="../documents/e6-document2.pdf" target="_blank">👁 Aperçu</a>
-              <a class="btn-dl" href="../documents/e6-document2.pdf" download>⬇ Télécharger</a>
-            </div>
+          <div class="doc-actions">
+            <a class="btn-view" href="../documents/Mission 1 E6.pdf" target="_blank">👁 Aperçu</a>
+            <a class="btn-dl" href="../documents/Mission 1 E6.pdf" download>⬇ Télécharger</a>
           </div>
         </div>
-
       </div>
+
     </div>
   </section>
 
   <footer class="footer">
     <div class="footer-inner">
-      <span>© 2026 — Axel · Portfolio BTS SIO SISR</span>
+      <span>© 2025–2027 — Axel · Portfolio BTS SIO SISR</span>
       <span>Fait avec passion</span>
     </div>
   </footer>
