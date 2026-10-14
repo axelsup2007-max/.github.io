@@ -127,8 +127,8 @@
   <div class="page-hero">
     <div class="container">
       <div class="section-label">Veille technologique</div>
-      <h1>Détection comportementale<br><span class="outline">et UEBA par IA</span></h1>
-      <p>Suivi automatisé des évolutions sur la détection des comportements suspects, l'analyse comportementale des utilisateurs et l'apport de l'intelligence artificielle en cybersécurité.</p>
+      <h1>Détection humaine<br><span class="outline">en cybersécurité</span></h1>
+      <p>Suivi des évolutions sur la détection des comportements suspects et des mouvements inhabituels dans les systèmes d'information.</p>
     </div>
   </div>
 
@@ -138,22 +138,126 @@
       <!-- Sujet de veille -->
       <div class="sujet-banner reveal">
         <div class="section-label light">Sujet de veille</div>
-        <h2>L'analyse comportementale (UEBA) et l'IA dans la détection des menaces internes</h2>
-        <p>Ma veille porte sur les technologies permettant de repérer les comportements humains anormaux au sein d'un système d'information (compromission de comptes, mouvements latéraux, menaces internes). L'architecture repose sur un système de veille entièrement automatisé combinant scripts Python, flux RSS spécialisés, automatisation CI/CD (GitHub Actions), intelligence artificielle (Google Gemini) et notifications Discord.</p>
+        <h2>La détection humaine dans la cybersécurité : repérer les mouvements inhabituels</h2>
+        <p>Ma veille porte sur les techniques et outils permettant de détecter des comportements humains anormaux au sein d'un système d'information — qu'il s'agisse d'un attaquant externe ayant compromis un compte, ou d'une menace interne. L'objectif est de comprendre comment les solutions modernes (SIEM, UEBA, IA) analysent les patterns comportementaux pour identifier ce qui sort de l'ordinaire.</p>
       </div>
 
       <!-- Méthode de veille -->
-      <div class="section-label">Méthode de veille automatisée</div>
+      <div class="section-label">Méthode de veille</div>
       <div class="methode-card reveal">
-        <h3>Pipeline CI/CD & Bot de Veille Intelligent (Python / GitHub Actions / Gemini AI)</h3>
+        <h3>Utilisation de script sur GitHub + centralisation des articles sur Discord  </h3>
         <div class="methode-step">
           <div class="step-num">1</div>
-          <div class="step-text"><strong>Agrégation de flux RSS spécialisés</strong> — Un script Python quotidien (`veille.py`) interroge de manière autonome un ensemble de flux RSS de référence en cybersécurité (The Hacker News, Dark Reading, BleepingComputer, Unit 42, etc.).</div>
+          <div class="step-text"><strong>Creation du github</strong> — GitHub s’occupe à l’aide d’une clé API d’une IA de chercher les articles sur des sites choisis et de résumer rapidement c’est s’article pour les envoyés sur le serveur Discord.</div>
         </div>
         <div class="methode-step">
           <div class="step-num">2</div>
-          <div class="step-text"><strong>Traitement et filtrage par IA (Google Gemini)</strong> — Chaque article récupéré est soumis à l'API de Gemini (avec logique de secours et tolérance aux pannes) pour générer un résumé technique concis en français et filtrer les contenus non pertinents.</div>
+          <div class="step-text"><strong>Configuration du script </strong> — Le script permet à l’IA d’accéder au lien RSS où on lui demande de regarder les derniers articles et de filtrer par rapport à leur pertinence au sujet.</div>
         </div>
         <div class="methode-step">
           <div class="step-num">3</div>
-          <div class="step-text"><strong>Diffusion et alertes en temps réel</strong> — Les pépites de veille identifiées sont transmises instant
+          <div class="step-text"><strong>Fréquence</strong> — Les alertes sont configurées pour une livraison quotidienne et pour la création d’un bilan toutes les 2 semaines qui est directement envoyé dans un fichier sur GitHub. Ce fichier est ensuite à la main rentrée dans le tableau de synthèse.</div>
+        </div>
+        <div class="methode-step">
+          <div class="step-num">4</div>
+          <div class="step-text"><strong>Tri et sélection</strong> — Les articles reçus sont triés régulièrement. Seuls ceux apportant une réelle valeur ajoutée (nouveautés techniques, cas concrets, évolutions réglementaires) sont retenus et synthétisés ci-dessous.</div>
+        </div>
+      </div>
+
+      <!-- Articles -->
+      <div class="section-label" style="margin-top:3rem;">Articles & ressources sélectionnés</div>
+      <div class="veille-grid">
+
+        <div class="veille-card reveal">
+          <div class="veille-date">2025 – 2026</div>
+          <h3>UEBA : l'analyse comportementale au service de la détection des menaces internes</h3>
+          <p>Les solutions UEBA (User and Entity Behavior Analytics) établissent une baseline du comportement normal de chaque utilisateur et déclenchent une alerte dès qu'une déviation significative est détectée : connexion à une heure inhabituelle, accès à des ressources inhabituelles, volume de données exfiltré anormal.</p>
+          <div class="tags-row">
+            <span class="tag">UEBA</span>
+            <span class="tag">Insider Threat</span>
+          </div>
+        </div>
+
+        <div class="veille-card reveal">
+          <div class="veille-date">2025 – 2026</div>
+          <h3>SIEM et corrélation d'événements : détecter les latéralisation réseau</h3>
+          <p>Les moteurs de corrélation des SIEM modernes (comme Wazuh ou Splunk) permettent de relier plusieurs événements apparemment anodins pour reconstituer un schéma d'attaque : un échec d'authentification suivi d'une réussite depuis un pays différent est un signal fort de compromission de compte.</p>
+          <div class="tags-row">
+            <span class="tag">SIEM</span>
+            <span class="tag">Corrélation</span>
+            <span class="tag">Wazuh</span>
+          </div>
+        </div>
+
+        <div class="veille-card reveal">
+          <div class="veille-date">2025 – 2026</div>
+          <h3>Zero Trust et principe du moindre privilège face aux mouvements latéraux</h3>
+          <p>L'architecture Zero Trust part du principe qu'aucun utilisateur ou équipement n'est de confiance par défaut, même à l'intérieur du réseau. Combinée à une détection comportementale, elle limite considérablement la capacité d'un attaquant à se déplacer latéralement après avoir compromis un premier compte.</p>
+          <div class="tags-row">
+            <span class="tag">Zero Trust</span>
+            <span class="tag">Mouvements latéraux</span>
+          </div>
+        </div>
+
+        <div class="veille-card reveal">
+          <div class="veille-date">2025 – 2026</div>
+          <h3>L'IA appliquée à la détection d'anomalies comportementales</h3>
+          <p>Les modèles d'apprentissage automatique permettent aujourd'hui de modéliser le comportement « normal » d'un utilisateur avec une précision bien supérieure aux règles statiques. Ils s'adaptent en continu et réduisent les faux positifs qui épuisent les équipes SOC.</p>
+          <div class="tags-row">
+            <span class="tag">Intelligence Artificielle</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">SOC</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Documents -->
+      <div class="section-label" style="margin-top:4rem;">Documents à consulter</div>
+
+      <div class="doc-card reveal">
+        <div class="doc-header">
+          <div class="doc-header-left">
+            <div class="doc-icon">📰</div>
+            <div>
+              <div class="doc-title">Dossier de veille — Détection humaine en cybersécurité</div>
+              <div class="doc-meta">PDF · veille-1.pdf</div>
+            </div>
+          </div>
+          <div class="doc-actions">
+            <a class="btn-view" href="../documents/veille-1.pdf" target="_blank">👁 Aperçu</a>
+            <a class="btn-dl" href="../documents/veille-1.pdf" download>⬇ Télécharger</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="doc-card reveal">
+        <div class="doc-header">
+          <div class="doc-header-left">
+            <div class="doc-icon">📰</div>
+            <div>
+              <div class="doc-title">Synthèse des alertes Google — Sélection d'articles</div>
+              <div class="doc-meta">PDF · veille-2.pdf</div>
+            </div>
+          </div>
+          <div class="doc-actions">
+            <a class="btn-view" href="../documents/veille-2.pdf" target="_blank">👁 Aperçu</a>
+            <a class="btn-dl" href="../documents/veille-2.pdf" download>⬇ Télécharger</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© 2025–2027 — Axel · Portfolio BTS SIO SISR</span>
+      <span>Fait avec passion</span>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
+
