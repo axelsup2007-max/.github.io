@@ -637,3 +637,22 @@ p strong { color: var(--text); }
   .hero { padding: 7rem 1.5rem 4rem; }
   .footer-inner { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
+
+/* ===== Titres : moins écrasés ===== */
+.hero-title {
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+h2 {
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.page-hero h1 {
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: 0;
+}
