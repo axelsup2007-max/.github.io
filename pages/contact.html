@@ -5,13 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact — Portfolio Axel SISR</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+    /* ===== Styles propres à la page Contact ===== */
+
+    /* Hero centré */
+    .page-hero .container {
+      text-align: center;
+    }
+    .page-hero p {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 560px;
+    }
+
+    /* Bloc principal centré : 2 colonnes égales, centrées dans la page */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 4rem;
+      align-items: start;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .contact-layout > div {
+      min-width: 0;
+    }
+
+    /* Carte d'informations */
+    .info-card {
+      margin-bottom: 1.5rem;
+    }
+    .info-value {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .info-value a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      word-break: break-all;
+    }
+    .info-value a:hover {
+      opacity: 0.7;
+    }
+
+    /* Bouton Copier */
+    .copy-btn {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      padding: 0.3rem 0.7rem;
+      background: transparent;
+      color: inherit;
+      border: 1px solid currentColor;
+      border-radius: 4px;
+      cursor: pointer;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+    .copy-btn:hover,
+    .copy-btn.copied {
+      opacity: 1;
+    }
+
+    .contact-note {
+      font-size: 0.8rem;
+    }
+    .contact-cv {
+      margin-top: 1.5rem;
+    }
+    .contact-cv .btn-ghost {
+      display: inline-block;
+    }
+
+    /* Mobile : une seule colonne */
+    @media (max-width: 800px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <header class="nav">
-    <div class="nav-brand"><a href="../index.html" style="text-decoration:none;color:inherit;">AXEL <span class="dot">·</span> SISR</a></div>
+    <div class="nav-brand">
+      <a href="../index.html" style="text-decoration:none;color:inherit;">AXEL <span class="dot">·</span> SISR</a>
+    </div>
     <nav class="nav-links">
       <a href="../index.html">Accueil</a>
       <a href="e5.html">E5</a>
@@ -32,11 +118,12 @@
 
   <section class="section">
     <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
+      <div class="contact-layout">
 
+        <!-- Colonne 1 : formulaire -->
         <div class="reveal">
           <div class="section-label">Formulaire</div>
-          <form class="contact-form" action="https://formspree.io/f/VOTRE_ID" method="POST">
+          <form class="contact-form" action="https://formspree.io/f/mrpeoqww" method="POST">
             <div class="form-group">
               <label for="name">Nom complet</label>
               <input type="text" id="name" name="name" placeholder="Jean Dupont" required>
@@ -53,29 +140,44 @@
           </form>
         </div>
 
+        <!-- Colonne 2 : informations -->
         <div class="reveal">
           <div class="section-label">Informations</div>
-          <div class="info-card" style="margin-bottom:1.5rem;">
+
+          <div class="info-card">
             <div class="info-item">
               <span class="info-label">Email</span>
-              <span>axel.sup200@gmail.com</span>
+              <span class="info-value">
+                <a href="mailto:axel.sup200@gmail.com">axel.sup200@gmail.com</a>
+                <button type="button" class="copy-btn" data-copy="axel.sup200@gmail.com">Copier</button>
+              </span>
             </div>
+
             <div class="info-item">
               <span class="info-label">LinkedIn</span>
-              <span>linkedin.com/in/votre-profil</span>
+              <span class="info-value">
+                <a href="https://www.linkedin.com/in/TON-PROFIL" target="_blank" rel="noopener">linkedin.com/in/TON-PROFIL</a>
+                <button type="button" class="copy-btn" data-copy="https://www.linkedin.com/in/TON-PROFIL">Copier</button>
+              </span>
             </div>
+
             <div class="info-item">
               <span class="info-label">GitHub</span>
-              <span>https://github.com/axelsup2007-max</span>
+              <span class="info-value">
+                <a href="https://github.com/axelsup2007-max" target="_blank" rel="noopener">github.com/axelsup2007-max</a>
+                <button type="button" class="copy-btn" data-copy="https://github.com/axelsup2007-max">Copier</button>
+              </span>
             </div>
+
             <div class="info-item">
               <span class="info-label">Localisation</span>
               <span>Île-de-France</span>
             </div>
           </div>
-          <p style="font-size:0.8rem;">Vous pouvez également télécharger mon CV ou consulter mon profil LinkedIn pour plus d'informations sur mon parcours.</p>
-          <div style="margin-top:1.5rem;">
-            <a href="#" class="btn-ghost" style="display:inline-block">Télécharger mon CV</a>
+
+          <p class="contact-note">Vous pouvez également télécharger mon CV ou consulter mon profil LinkedIn pour plus d'informations sur mon parcours.</p>
+          <div class="contact-cv">
+            <a href="../assets/CV-Axel.pdf" download class="btn-ghost">Télécharger mon CV</a>
           </div>
         </div>
 
@@ -91,5 +193,31 @@
   </footer>
 
   <script src="../js/main.js"></script>
+  <script>
+    /* Boutons "Copier" */
+    document.querySelectorAll('.copy-btn').forEach(function (btn) {
+      btn.addEventListener('click', async function () {
+        var text = btn.dataset.copy;
+        try {
+          await navigator.clipboard.writeText(text);
+        } catch (e) {
+          var t = document.createElement('textarea');
+          t.value = text;
+          document.body.appendChild(t);
+          t.select();
+          document.execCommand('copy');
+          document.body.removeChild(t);
+        }
+        var original = btn.textContent;
+        btn.textContent = 'Copié ✓';
+        btn.classList.add('copied');
+        setTimeout(function () {
+          btn.textContent = original;
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    });
+  </script>
+
 </body>
 </html>
